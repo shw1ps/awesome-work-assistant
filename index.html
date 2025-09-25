@@ -4,11 +4,32 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AWA</title>
-    <script src="app.js" defer></script>
+    
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h1>hello world</h1>
-    <div id="container" class="container"></div>
+<div id="container" class="container">
+    <div class="todo-container">
+        <h1 class="todotxt">TO-DO LIST</h1>
+        <form id="task-form">
+        <input type="text" id="task-input" placeholder="Добавить задачу..." required>
+        <button type="submit">Добавить</button>
+        </form>
+        <ul id="task-list"></ul>
+    </div>
+</div>
+
+<div class="notecont">
+     <div id="sidebar">
+    <h2>Заметки</h2>
+    <div id="notes-list"></div>
+    <button id="add-note">Новая заметка</button>
+  </div>
+  <div id="editor">
+    <h1 id="note-title">Без названия</h1>
+    <textarea id="note" placeholder="Пиши здесь..."></textarea>
+  </div>
+  </div>
+<script src="app.js"></script>
 </body>
 </html>

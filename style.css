@@ -1,5 +1,178 @@
-.container {
-    width: 100px;
-    height: 100%;
-    background-color: #23282b;
+@font-face {
+    font-family: 'Druk';
+    src: url(fonts/Druk\ Wide\ Cyr.ttf) format('truetype');
+    font-weight: normal;
+    font-style: normal;
 }
+body {
+    font-family: Druk;
+    color: #ffffff;
+    background-color: #23282b;
+    display: flex;
+  margin: 0;
+  padding: 20px;
+}
+.container {
+    color: #23282b;
+display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  height: 100vh;
+  margin: -50px 20px;
+}
+.todo-container {
+  background: #fff;
+  padding: 40px 30px 30px 30px;
+  border-radius: 0 0 15px 15px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+  width: 400px;
+}
+.todotxt {
+    text-align: center;
+  color: #333;
+}
+#task-form {
+  display: flex;
+  margin-bottom: 20px;
+}
+#task-input {
+    font-family: druk;
+  flex: 1;
+  padding: 10px;
+  border-radius: 10px 0 0 10px;
+  border: 1px solid #ccc;
+  font-size: 13px;
+}
+
+#task-form button {
+    font-family: Druk;
+  padding: 10px 20px;
+  border: none;
+  background: #23282b;
+  color: white;
+  font-size: 13px;
+  cursor: pointer;
+  border-radius: 0 10px 10px 0;
+  transition: background 0.3s;
+}
+
+#task-form button:hover {
+  background: #424242;
+  
+}
+#task-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+#task-list li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #f9f9f9;
+  margin-bottom: 10px;
+  padding: 10px;
+  border-radius: 6px;
+  transition: background 0.3s;
+}
+
+#task-list li.completed {
+  text-decoration: line-through;
+  color: #999 
+}
+#task-list button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+  color: #000000;
+}
+
+
+/* блокнот */
+
+.notecont {
+    font-family: Druk;
+      display: flex;
+      height: 600px; 
+      width: 800px;  
+      margin: -20px 0 0 0 ;
+      border: 1px solid #ccc;
+      border-radius: 0 0 15px 15px;;
+      display: flex;
+      height: 600px; 
+      overflow: hidden;
+      background: #f0f0f0;
+}
+ #sidebar {
+      width: 220px;
+      background: #fff;
+      color: #23282b;
+      display: flex;
+      flex-direction: column;
+      padding: 10px;
+    }
+    #sidebar h2 {
+      font-size: 16px;
+      margin: 0 0 10px;
+      text-align: center;
+    }
+    #notes-list {
+      flex: 1;
+      overflow-y: auto; /* скролл при большом числе заметок */
+    }
+    .note-item {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 6px;
+      margin: 4px 0;
+      background: #fff;
+      cursor: pointer;
+      border-radius: 10px;
+      font-size: 14px;
+      border: 1px solid #999;
+    }
+    .note-item.active {
+      background: #ffffff;
+      border: black solid 2px;
+      border-radius: 10px;
+    }
+    .note-item button {
+      background: none;
+      border: none;
+      color: #b90000;
+      font-size: 14px;
+      cursor: pointer;
+    }
+    #add-note {
+      font-family: Druk;
+      padding: 8px;
+      margin-top: 10px;
+      background: #fff;
+      border: #000000 solid 1px;
+      color: #23282b;
+      border: none;
+      cursor: pointer;
+      border-radius: 3px;
+    }
+    #editor {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      background: #fff;
+    }
+    #editor h1 {
+      margin: 10px;
+      font-size: 18px;
+    }
+    #note {
+      flex: 1;
+      margin: 10px;
+      padding: 10px;
+      font-size: 14px;
+      border: 1px solid #ccc;
+      border-radius: 10px;
+      resize: none;
+    }
