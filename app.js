@@ -13,8 +13,7 @@ function render() {
     li.innerHTML = `
       <span>${task.text}</span>
       <div>
-        <button onclick="toggle(${index})">✔</button>
-        <button onclick="remove(${index})">✖</button>
+        <button onclick="toggle(${index})">✔</button><button onclick="remove(${index})">✖</button>
       </div>
     `;
     list.appendChild(li);
@@ -83,18 +82,17 @@ render();
     }
 
     function loadNote() {
-      const note = notes[currentIndex];
-      textarea.value = note.content;
-      noteTitle.textContent = note.title || "Без названия";
-      renderNotes();
-    }
-
+  const note = notes[currentIndex];
+  noteTitle.textContent = note.content ? note.content.split('\n')[0] : "Без названия";
+  textarea.value = note.content;
+  renderNotes();
+}
     textarea.addEventListener("input", () => {
-      notes[currentIndex].content = textarea.value;
-      notes[currentIndex].title = textarea.value.substring(0, 15) || "Без названия";
-      saveNotes();
-      renderNotes();
-    });
+  notes[currentIndex].content = textarea.value;
+  notes[currentIndex].title = textarea.value ? textarea.value.split('\n')[0] : "Без названия";
+  saveNotes();
+  renderNotes();
+});
 
     addNoteBtn.addEventListener("click", () => {
       notes.push({ title: "Новая заметка", content: "" });
