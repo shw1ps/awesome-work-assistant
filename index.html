@@ -15,6 +15,21 @@
         <input type="text" id="task-input" placeholder="Добавить задачу..." required>
         <button type="submit">Добавить</button>
         </form>
+        <div class="todo-controls">
+          <input type="search" id="task-search" placeholder="Поиск задач...">
+          <select id="task-filter">
+            <option value="all">Все</option>
+            <option value="active">Текущие</option>
+            <option value="completed">Выполненные</option>
+            <option value="important">Важно</option>
+          </select>
+        </div>
+        <div class="todo-quick-actions">
+          <button id="toggle-all" type="button">Отметить все</button>
+          <button id="clear-completed" type="button">Очистить выполненные</button>
+          <button id="reset-list" type="button">Сбросить список</button>
+        </div>
+        <div class="todo-summary" id="task-summary"></div>
         <ul id="task-list"></ul>
     </div>
 </div>
@@ -22,6 +37,7 @@
 <div class="notecont">
      <div id="sidebar">
     <h2>Заметки</h2>
+    <select id="notes-select" class="notes-select" aria-label="Выбор заметки"></select>
     <div id="notes-list"></div>
     <button id="add-note">Новая заметка</button>
   </div>
